@@ -1,3 +1,5 @@
+# the code use pytest to test for possible sql injection in First name for a participant 
+
 import pytest
 import requests
 
@@ -5,7 +7,7 @@ BASE_URL = "https://test.openspecimen.org/rest/ng"
 
 USERNAME = "rohit@krishagni.com"  
 PASSWORD = "Manchester@123"
-DOMAIN = "KSPL-LDAP"      # 🔑 replace
+DOMAIN = "KSPL-LDAP"      
 
 
 @pytest.fixture(scope="session")
@@ -42,7 +44,7 @@ def test_sql_injection_add_participant(api_url, headers):
     malicious_input = "'; DROP TABLE catissue_collection_protocol_registrations; --"
 
     payload = {
-        "cpId": 2,   # ⚠️ must be valid
+        "cpId": 2,   
         "ppid": 3457,
         "registrationDate": "2024-01-01",
         "participant": {
@@ -59,5 +61,16 @@ def test_sql_injection_add_participant(api_url, headers):
     print("\nStatus Code:", response.status_code)
     print("Response:", response.text)
 
-    # ✅ Injection should not break system
+    # Injection should not break system
     assert response.status_code in [200, 201]
+
+
+
+'''
+platform linux -- Python 3.12.3, pytest-9.0.2, pluggy-1.6.0 -- /home/rohit/Desktop/Pytest/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/rohit/Desktop/Pytest
+collected 1 item                                                                                                                                                                                                            
+
+new.py::test_sql_injection_add_participant PASSED                                                                                                                                                                     [100%]
+'''
