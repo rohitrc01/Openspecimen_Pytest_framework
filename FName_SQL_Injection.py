@@ -6,7 +6,7 @@ import requests
 BASE_URL = "https://test.openspecimen.org/rest/ng"
 
 USERNAME = "rohit@krishagni.com"  
-PASSWORD = "Manchester@123"
+PASSWORD = ""
 DOMAIN = "KSPL-LDAP"      
 
 
@@ -65,6 +65,7 @@ def test_sql_injection_add_participant(api_url, headers):
     assert response.status_code in [200, 201]
 
 
+------------------------ OUTPUT ------------------------
 
 '''
 platform linux -- Python 3.12.3, pytest-9.0.2, pluggy-1.6.0 -- /home/rohit/Desktop/Pytest/venv/bin/python3
