@@ -1,3 +1,7 @@
+
+
+
+
 """
 OpenSpecimen API — Data-Driven Participant Registration Tests
 =============================================================
@@ -187,3 +191,27 @@ def test_participant_registration(row, api_url, headers):
         assert response.status_code not in (200, 201), (
             f"❌ [{test_label}] expected failure, but got {response.status_code}"
         )
+
+
+--------------------------------------------------------------------------------------------------OUTPUT--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+✅ Logged in to https://test.openspecimen.org/rest/ng
+
+── Invalid_Registration_Site ──
+   Status : 400
+   Payload: {'cpId': 2, 'participant': {'firstName': 'John', 'lastName': 'Doe', 'birthDate': '1990-05-20', 'gender': 'Male', 'vitalStatus': 'Alive', 'races': ['White'], 'ethnicities': ['Not Hispanic or Latino']}, 'registrationDate': '2024-01-15', 'site': 'Fake_Hospital_XYZ', 'externalSubjectId': 'EXT-FAIL-04', 'activityStatus': 'Active'}
+   Response: [{"code":"SITE_NOT_FOUND","message":"Site specified does not exist."}]
+============================================================================================ short test summary info ============================================================================================
+FAILED FM_test.py::test_participant_registration[Invalid_Registration_Site] - AssertionError: ❌ [Invalid_Registration_Site] expected success (200/201), got 400
+=============================================================================================== 1 failed in 3.31s ===============================================================================================
+
+
+
+
+
+
+
+
+
+
+
