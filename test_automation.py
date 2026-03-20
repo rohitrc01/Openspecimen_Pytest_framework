@@ -1,7 +1,4 @@
 
-
-
-
 """
 OpenSpecimen API — Data-Driven Participant Registration Tests
 =============================================================
