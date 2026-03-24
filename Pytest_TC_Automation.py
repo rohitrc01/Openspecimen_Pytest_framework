@@ -153,6 +153,15 @@ def pytest_terminal_summary(terminalreporter, exitstatus, config):
         parts.append(f"{skipped} skipped")
     terminalreporter.write_sep("=", ", ".join(parts))
 
+
+
+
+
+
+
+
+
+
 '''
 ------------------------------------------------------------OUTPUT----------------------------------------------------------
                                                          FAILURES 
@@ -161,3 +170,5 @@ __________________________________________________ test_participant[TC_001] ____
                                                    short test summary info 
 FAILED test_participants.py::test_participant[TC_001] - Failed: [TC_001] [{"code":"CPR_DUP_PPID","message":"A participant with same PPID 4563 already exists in this protocol."}]...
 ================================================ 1 failed, 2 passed in 7.95s =================================================
+
+''' 
