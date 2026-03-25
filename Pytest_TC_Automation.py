@@ -453,19 +453,3 @@ def test_participant(tc_row, record_property):
             f"{deep_info}",
             pytrace=False,
         )
-
-
-
-
-
-
-'''
-------------------------------------------------------------OUTPUT----------------------------------------------------------
-                                                         FAILURES 
-__________________________________________________ test_participant[TC_001] __________________________________________________
-[TC_001] [{"code":"CPR_DUP_PPID","message":"A participant with same PPID 4563 already exists in this protocol."}] | HTTP 400
-                                                   short test summary info 
-FAILED test_participants.py::test_participant[TC_001] - Failed: [TC_001] [{"code":"CPR_DUP_PPID","message":"A participant with same PPID 4563 already exists in this protocol."}]...
-================================================ 1 failed, 2 passed in 7.95s =================================================
-
-''' 
